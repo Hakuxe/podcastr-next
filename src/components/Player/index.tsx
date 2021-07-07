@@ -13,10 +13,12 @@ export default function Player() {
             Selecione um podcast para ouvir 
          </section>
 
-         <footer>
+         <footer className={styles.empty}>
             <section className={styles.progressBar}>
                <span>00:00</span>
-               <div className={styles.emptySlider}/>
+               <div className={styles.slider}>
+                  <div className={styles.emptySlider}/>
+               </div>
                <span>00:00</span>
             </section>
 
