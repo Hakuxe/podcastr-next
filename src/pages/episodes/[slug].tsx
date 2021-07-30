@@ -53,16 +53,36 @@ export default function Episode(props: EpisodeProps) {
             <span>{episode.publishedAt}</span>
             <span>{episode.durationAsString}</span>
          </header>
-         <div className={styles.description}>
-            {episode.description}
-         </div>
+         <div className={styles.description}>{episode.description}</div>
       </div>
    );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+   /**
+    * buscando os 2 últimos episódios para gerar de forma estática
+    */
+   const { data } = await api.get("/episodes", {
+      params: {
+         _limit: 2,
+         _sort: "published_at",
+         _order: "desc",
+      },
+   });
+
+   const paths = data.map((episode) => {
+      return {
+         params: {
+            slug: episode.id,
+         },
+      };
+   });
+
    return {
-      paths: [],
+      /** Paths quais itens ele deve carregar estaticamente
+       * path: [] = não gera nenhum estaticamente
+       */
+      paths,
       fallback: "blocking",
    };
 };
