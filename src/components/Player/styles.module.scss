@@ -1,5 +1,5 @@
 .playerContainer {
-   padding: 2rem 4rem;
+   padding: 1rem 4rem;
    width: 22.5rem;
    height: 100vh;
 
@@ -15,6 +15,7 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+      margin-bottom: 1rem;
    }
 
    strong {
@@ -28,6 +29,29 @@
       &.empty {
          opacity: 0.5;
       }
+   }
+}
+
+.currentEpisode{
+   text-align: center;
+
+   img{
+      border-radius: 1.5rem;
+   }
+
+   strong{
+      display: block;
+      margin-top: 1.6rem;
+      font: 600 1rem Lexend, sans-serif ;
+      line-height: 1rem;
+   }
+
+   span{
+      display: block;
+      font: 600 0.5rem Lexend, sans-serif ;
+      color: var(--gray-100);
+      margin-top:1rem;
+      margin-bottom:1rem;
    }
 }
 
@@ -82,6 +106,10 @@
       background: transparent;
       border: 0;
       font-size: 0;
+
+      &:disabled{
+         cursor: not-allowed;
+      }
 
       &.buttonPlay{
          width: 4rem;

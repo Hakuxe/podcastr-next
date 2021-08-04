@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 
 import { GetStaticProps } from "next";
 import Image from "next/image";
@@ -13,6 +13,8 @@ import { api } from "../services/episodes.service";
 import convertDurationToTimeString from "../helpers/convertDurationToTimeString";
 
 import styles from "./home.module.scss";
+import Player from "../components/Player/Player";
+import { PlayerContext } from "../contexts/PlayerContext";
 
 //SSR (Server Side Rendering)
 //SSG (Server Side Generation)
@@ -35,6 +37,7 @@ type HomeProps = {
 
 export default function Home(props: HomeProps) {
    const { latestEpisodes, allEpisodes } = props;
+   const {play} = useContext(PlayerContext);
 
    //SPA (Single Page Application)
    // useEffect(()=>{
@@ -68,7 +71,7 @@ export default function Home(props: HomeProps) {
                            <span>{episode.publishedAt}</span>
                            <span>{episode.durationAsString}</span>
                         </div>
-                        <button type="button">
+                        <button type="button" onClick={() => play(episode)}>
                            <img src="/play-green.svg" alt="Tocar episódio" />
                         </button>
                      </li>
