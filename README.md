@@ -2,12 +2,9 @@
 ## 💻 Project
 This is a project developed during the **NLW#05** - Next Level Week, presented by [Rocketseat](https://www.rocketseat.com.br/)
  
-<br/>
 
 ## 📋 Layout
 You can view the project layout through the link [Layout](https://www.figma.com/file/UwFEntsHpHYJlHNQAQr4gA/Podcastr?node-id=160%3A2761)
-      
-<br/>
 
 ## 🛠️ Technologies
 
@@ -22,7 +19,6 @@ You can view the project layout through the link [Layout](https://www.figma.com/
 
 
 ## 🚀 Getting Started 
-<br/>
 
 ```
 # Open the folder 
